@@ -6,7 +6,7 @@
 /*   By: gjailbir <gjailbir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/20 17:32:25 by gjailbir          #+#    #+#             */
-/*   Updated: 2021/09/21 19:06:59 by gjailbir         ###   ########.fr       */
+/*   Updated: 2021/09/22 20:48:41 by gjailbir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,44 +19,19 @@ int	ft_is_digit(char c)
 	return (0);
 }
 
-
-t_struct	*ft_lst_last(t_struct	*lst)
+int	ft_strcmp(char *str1, char *str2)
 {
-	if (!lst)
-		return (NULL);
-	while (lst->next)
-		lst = lst->next;
-	return (lst);
-}
+	int	i;
 
-
-t_struct	*ft_lst_new(int content)
-{
-	t_struct	*list;
-
-	list = malloc(sizeof(t_struct));
-	if (!list)
-		return (0);
-	else
+	i = 0;
+	while (str1[i] || str2[i])
 	{
-		(*list).num = content;
-		(*list).next = NULL;
-		return (list);
+		if (str1[i] == str2[i])
+			i++;
+		else
+			return (0);
 	}
-}
-
-
-static void	ft_lst_add_back(t_struct **lst, t_struct *new)
-{
-	t_struct	*end;
-
-	if (!*lst)
-		*lst = new;
-	else
-	{
-		end = ft_lst_last(*lst);
-		end->next = new;
-	}
+	return (1);
 }
 
 int	ft_checker(char *str)
@@ -64,62 +39,51 @@ int	ft_checker(char *str)
 	int	i;
 
 	i = 0;
-	while(str[i])
+	if (str[i] != '-' && str[i] != '+')
+		i--;
+	while (str[++i])
 	{
-		if (str[i] != ' ' && !ft_is_digit(str[i]) && str[i] != '-' && str[i] != '+')
+		if (!ft_is_digit(str[i]))
 			return (0);
-		i++;
 	}
 	return (1);
 }
 
+int	ft_checker_stack(t_struct *stack_a, int num)
+{
+	while (stack_a)
+	{
+		if (stack_a->num == num)
+			return (0);
+		stack_a = stack_a->next;
+	}
+	return (1);
+}
 
-int	ft_parse(const char **str, t_struct **stack_a)
+int	ft_parser(const char **arv, t_struct **stack_a)
 {
 	int		i;
 	int		ind;
 	int		num;
 	char	**buff;
-	
+
 	i = 0;
-	ind = 1;
-	while(str[ind])
+	ind = 0;
+	while (arv[++ind])
 	{
-	   	buff = ft_split(str[ind], ' ');
-		i = 0;
-		while (buff[i])
+		buff = ft_split(arv[ind], ' ');
+		i = -1;
+		while (buff[++i])
 		{
 			if (!ft_checker(buff[i]))
 				return (0);
-			else
-			{
-				// printf("|%s|\n", buff[i]);
-				num = ft_atoi(buff[i]);
-				// printf("%d\n", num);
-				ft_lst_add_back(stack_a, ft_lst_new(num));
-			}
-			i++;
+			num = ft_atoi(buff[i]);
+			if (!ft_checker_stack(*stack_a, num))
+				return (0);
+			ft_lst_add_back(stack_a, ft_lst_new(num));
+			free(buff[i]);
 		}
-		ind++;
+		free(buff);
 	}
-	t_struct **tmp;
-	tmp = stack_a;
-	while ((*tmp))
-	{
-		printf("%d\n", (*tmp)->num);
-		(*tmp) = (*tmp)->next;
-	}
-	
 	return (1);
-}
-
-
-
-int main(int arc, const char **arv)
-{
-	(void)arc;
-	int res;
-	t_struct *stack_a;
-	res = ft_parse(arv, &stack_a);
-	printf("|%d|\n", res); 
 }

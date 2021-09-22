@@ -6,13 +6,13 @@
 /*   By: gjailbir <gjailbir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/17 13:15:24 by gjailbir          #+#    #+#             */
-/*   Updated: 2021/04/19 17:56:19 by gjailbir         ###   ########.fr       */
+/*   Updated: 2021/09/22 20:51:16 by gjailbir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memset (void *dest, int chr, size_t n)
+void	*ft_memset(void *dest, int chr, size_t n)
 {
 	unsigned char	*dest1;
 
