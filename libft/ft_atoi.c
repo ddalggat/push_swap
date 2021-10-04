@@ -6,7 +6,7 @@
 /*   By: gjailbir <gjailbir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/22 12:20:46 by gjailbir          #+#    #+#             */
-/*   Updated: 2021/09/22 20:50:47 by gjailbir         ###   ########.fr       */
+/*   Updated: 2021/09/28 18:41:13 by gjailbir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,13 +22,13 @@ static int	ft_isspace(char c)
 static	int	ft_ismax(long res)
 {
 	if (res > 2147483647)
-		return (-1);
-	if (res < -2147483647)
+		return (0);
+	else if (res < -2147483648)
 		return (0);
 	return (1);
 }
 
-int	ft_atoi(const char *str)
+int	ft_atoi(const char *str, int *flag)
 {
 	int		sign;
 	long	res;
@@ -42,9 +42,12 @@ int	ft_atoi(const char *str)
 			sign = -1;
 	while (ft_isdigit(*str))
 	{
-		if (ft_ismax(res * sign) != 1)
-			return (ft_ismax(res * sign));
 		res = (res * 10) + (*str - '0');
+		if (!ft_ismax(res * sign))
+		{
+			*flag = 0;
+			return (0);
+		}
 		str++;
 	}
 	return (res * sign);

@@ -6,33 +6,11 @@
 /*   By: gjailbir <gjailbir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/20 17:32:25 by gjailbir          #+#    #+#             */
-/*   Updated: 2021/09/22 20:48:41 by gjailbir         ###   ########.fr       */
+/*   Updated: 2021/09/30 14:11:52 by gjailbir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-int	ft_is_digit(char c)
-{
-	if (c >= '0' && c <= '9')
-		return (1);
-	return (0);
-}
-
-int	ft_strcmp(char *str1, char *str2)
-{
-	int	i;
-
-	i = 0;
-	while (str1[i] || str2[i])
-	{
-		if (str1[i] == str2[i])
-			i++;
-		else
-			return (0);
-	}
-	return (1);
-}
 
 int	ft_checker(char *str)
 {
@@ -60,29 +38,45 @@ int	ft_checker_stack(t_struct *stack_a, int num)
 	return (1);
 }
 
+int	ft_recording(t_struct **stack_a, char **buff, int i, int flag)
+{
+	int	num;
+
+	while (buff[++i])
+	{
+		if (!ft_checker(buff[i]))
+			return (0);
+		num = ft_atoi(buff[i], &flag);
+		if (num == 0 && flag == 0)
+			return (0);
+		if (!ft_checker_stack(*stack_a, num))
+			return (0);
+		ft_lst_add_back(stack_a, ft_lst_new(num));
+		free(buff[i]);
+	}
+	return (1);
+}
+
 int	ft_parser(const char **arv, t_struct **stack_a)
 {
 	int		i;
 	int		ind;
-	int		num;
+	int		res;
+	int		flag;
 	char	**buff;
 
 	i = 0;
 	ind = 0;
+	flag = 1;
 	while (arv[++ind])
 	{
 		buff = ft_split(arv[ind], ' ');
+		if (!buff[0])
+			return (0);
 		i = -1;
-		while (buff[++i])
-		{
-			if (!ft_checker(buff[i]))
-				return (0);
-			num = ft_atoi(buff[i]);
-			if (!ft_checker_stack(*stack_a, num))
-				return (0);
-			ft_lst_add_back(stack_a, ft_lst_new(num));
-			free(buff[i]);
-		}
+		res = ft_recording(stack_a, buff, i, flag);
+		if(!res)
+			return (0);
 		free(buff);
 	}
 	return (1);
