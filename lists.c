@@ -6,7 +6,7 @@
 /*   By: gjailbir <gjailbir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/22 20:49:08 by gjailbir          #+#    #+#             */
-/*   Updated: 2021/10/01 17:17:25 by gjailbir         ###   ########.fr       */
+/*   Updated: 2021/10/05 22:43:49 by gjailbir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,12 @@ void	ft_lst_add_back(t_struct **lst, t_struct *new)
 		end = ft_lst_last(*lst);
 		end->next = new;
 	}
+}
+
+void	ft_lst_add_front(t_struct **lst, t_struct *new)
+{
+	new->next = *lst;
+	*lst = new;
 }
 
 int	ft_lst_size(t_struct *lst)

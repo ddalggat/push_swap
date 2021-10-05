@@ -10,7 +10,8 @@ SRCS 	=	parser.c lists.c \
 			rotate.c swap.c \
 			indexing.c three_nums.c \
 			marking.c source.c \
-			push_back.c main.c \
+			push_back.c sorting.c \
+			main.c 
 
 DEPS	=	push_swap.h \
 			libft/libft.h \
