@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   reverse.c                                          :+:      :+:    :+:   */
+/*   reverse_bonus.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gjailbir <gjailbir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/27 16:02:10 by gjailbir          #+#    #+#             */
-/*   Updated: 2021/10/07 00:08:40 by gjailbir         ###   ########.fr       */
+/*   Created: 2021/10/07 00:09:46 by gjailbir          #+#    #+#             */
+/*   Updated: 2021/10/07 00:27:53 by gjailbir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 t_struct	*penultimate_node(t_struct *lst)
 {
@@ -36,25 +36,22 @@ void	reverse(t_struct **stack)
 	tmp->next = NULL;
 }
 
-void	rev_a(t_struct **stack_a)
+void	rra(t_struct **stack_a)
 {
 	if (*stack_a && (*stack_a)->next)
 		reverse(stack_a);
-	write(1, "rra\n", 4);
 }
 
-void	rev_b(t_struct **stack_b)
+void	rrb(t_struct **stack_b)
 {
 	if (*stack_b && (*stack_b)->next)
 		reverse(stack_b);
-	write(1, "rrb\n", 4);
 }
 
-void	rev_both(t_struct **stack_a, t_struct **stack_b)
+void	rrr(t_struct **stack_a, t_struct **stack_b)
 {
 	if (*stack_b && (*stack_b)->next)
 		reverse(stack_b);
 	if (*stack_a && (*stack_a)->next)
 		reverse(stack_a);
-	write(1, "rrr\n", 4);
 }

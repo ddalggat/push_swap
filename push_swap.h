@@ -6,13 +6,14 @@
 /*   By: gjailbir <gjailbir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/20 17:36:01 by gjailbir          #+#    #+#             */
-/*   Updated: 2021/10/06 22:57:30 by gjailbir         ###   ########.fr       */
+/*   Updated: 2021/10/07 00:20:39 by gjailbir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
+# include "gnl/get_next_line.h"
 # include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
@@ -104,5 +105,18 @@ void		ft_three_nums(t_struct **stack_a);
 void		ft_push_to_b(t_struct **stack_a, t_struct **stack_b, t_max *max);
 void		ft_push_pair(t_struct **stack_a, t_struct **stack_b, t_max *max);
 void		ft_sorting(t_struct **stack_a);
+
+//***//bonus_functions\\***//
+void		rra(t_struct **stack_a);
+void		rrb(t_struct **stack_b);
+void		rrr(t_struct **stack_a, t_struct **stack_b);
+void		pb(t_struct **stack_a, t_struct **stack_b);
+void		pa(t_struct **stack_b, t_struct **stack_a);
+void		ra(t_struct **stack_a);
+void		rb(t_struct **stack_b);
+void		rr(t_struct **stack_a, t_struct **stack_b);
+void		sa(t_struct **stack_a);
+void		sb(t_struct **stack_b);
+void		ss(t_struct **stack_a, t_struct **stack_b);
 
 #endif
