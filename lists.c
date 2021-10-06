@@ -6,7 +6,7 @@
 /*   By: gjailbir <gjailbir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/22 20:49:08 by gjailbir          #+#    #+#             */
-/*   Updated: 2021/10/05 22:43:49 by gjailbir         ###   ########.fr       */
+/*   Updated: 2021/10/07 01:01:29 by gjailbir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,10 @@ int	ft_lst_size(t_struct *lst)
 	int	i;
 
 	i = 0;
-	while (lst && ++i)
+	while (lst)
+	{
 		lst = (*lst).next;
+		i++;
+	}
 	return (i);
 }

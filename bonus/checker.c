@@ -6,30 +6,11 @@
 /*   By: gjailbir <gjailbir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/06 23:04:38 by gjailbir          #+#    #+#             */
-/*   Updated: 2021/10/07 00:27:23 by gjailbir         ###   ########.fr       */
+/*   Updated: 2021/10/07 01:06:25 by gjailbir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
-
-void	free_stack(t_struct **stack)
-{
-	int			i;
-	t_struct	*del;
-	t_struct	*cur;
-	int			size;
-
-	i = 0;
-	cur = *stack;
-	size = ft_lst_size(*stack);
-	while (i < size)
-	{
-		del = cur;
-		cur = cur->next;
-		free(del);
-		i++;
-	}
-}
 
 int	issorted_list(t_struct **stack)
 {
@@ -106,7 +87,8 @@ int	main(int argc, const char **argv)
 		return (0);
 	}
 	ft_read_cmds(&stack_a, &stack_b);
-	if (!issorted_list(&stack_a) && !stack_b)
+	res = ft_lst_size(stack_b);
+	if (!issorted_list(&stack_a) && res == 0)
 		write(1, "OK\n", 3);
 	else
 		write(1, "KO\n", 3);

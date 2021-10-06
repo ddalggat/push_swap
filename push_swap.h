@@ -6,7 +6,7 @@
 /*   By: gjailbir <gjailbir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/20 17:36:01 by gjailbir          #+#    #+#             */
-/*   Updated: 2021/10/07 00:20:39 by gjailbir         ###   ########.fr       */
+/*   Updated: 2021/10/07 00:47:59 by gjailbir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,6 +105,7 @@ void		ft_three_nums(t_struct **stack_a);
 void		ft_push_to_b(t_struct **stack_a, t_struct **stack_b, t_max *max);
 void		ft_push_pair(t_struct **stack_a, t_struct **stack_b, t_max *max);
 void		ft_sorting(t_struct **stack_a);
+void		free_stack(t_struct **stack);
 
 //***//bonus_functions\\***//
 void		rra(t_struct **stack_a);

@@ -6,11 +6,30 @@
 /*   By: gjailbir <gjailbir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/06 22:53:56 by gjailbir          #+#    #+#             */
-/*   Updated: 2021/10/06 22:54:54 by gjailbir         ###   ########.fr       */
+/*   Updated: 2021/10/07 00:51:45 by gjailbir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+void	free_stack(t_struct **stack)
+{
+	int			i;
+	t_struct	*del;
+	t_struct	*cur;
+	int			size;
+
+	i = 0;
+	cur = *stack;
+	size = ft_lst_size(*stack);
+	while (i < size)
+	{
+		del = cur;
+		cur = cur->next;
+		free(del);
+		i++;
+	}
+}
 
 void	ft_steping(t_struct **stack)
 {

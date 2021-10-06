@@ -17,7 +17,7 @@ SRCS 	=	parser.c lists.c \
 SRCS_BONUS	=	bonus/checker.c parser.c \
 				bonus/swap_bonus.c lists.c \
 				bonus/push_bonus.c source.c \
-				bonus/rotate_bonus.c \
+				bonus/rotate_bonus.c source_second.c\
 				bonus/reverse_bonus.c \
 				gnl/get_next_line.c gnl/get_next_line_utils.c
 
