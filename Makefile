@@ -11,7 +11,7 @@ SRCS 	=	parser.c lists.c \
 			indexing.c three_nums.c \
 			marking.c source.c \
 			push_back.c sorting.c \
-			main.c 
+			source_second.c main.c \
 
 DEPS	=	push_swap.h \
 			libft/libft.h \

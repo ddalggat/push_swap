@@ -6,7 +6,7 @@
 /*   By: gjailbir <gjailbir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/20 17:32:25 by gjailbir          #+#    #+#             */
-/*   Updated: 2021/10/05 22:48:36 by gjailbir         ###   ########.fr       */
+/*   Updated: 2021/10/06 21:46:14 by gjailbir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,7 @@ int	ft_parser(const char **arv, t_struct **stack_a)
 			return (0);
 		i = -1;
 		res = ft_recording(stack_a, buff, i, flag);
-		if(!res)
+		if (!res)
 			return (0);
 		free(buff);
 	}

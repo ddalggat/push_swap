@@ -6,7 +6,7 @@
 /*   By: gjailbir <gjailbir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/20 17:36:01 by gjailbir          #+#    #+#             */
-/*   Updated: 2021/10/05 23:23:31 by gjailbir         ###   ########.fr       */
+/*   Updated: 2021/10/06 22:57:30 by gjailbir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ typedef struct s_struct
 	int				num;
 	int				index;
 	int				greater_than;
-	int 			bool;
+	int				bool;
 	int				ra;
 	int				rra;
 	int				steps;
@@ -52,48 +52,57 @@ int			ft_lst_size(t_struct *lst);
 int			ft_parser(const char **arv, t_struct **stack_a);
 
 //***//source_functions\\***//
-int	ft_is_digit(char c);
-int	ft_strcmp(char *str1, char *str2);
+int			ft_is_digit(char c);
+int			ft_strcmp(char *str1, char *str2);
+int			ft_min_num(t_struct **stack_a);
+int			maxx(int a, int b);
+void		ft_find_pair(t_struct **stack_b, t_struct **stack_a, t_max *max);
+void		ft_steping(t_struct **stack);
+void		ft_find_min(t_max *max, int *buff, t_struct *tmp_b);
+void		ft_min_step(t_struct **stack_b, int *buff);
+t_struct	*ft_summation(t_struct **stack_b, t_max *max);
 
 //***//swap_functions\\***//
-void	swap_a(t_struct **stack_a);
-void	swap_b(t_struct **stack_b);
-void	swap_both(t_struct **stack_a, t_struct **stack_b);
+void		swap_a(t_struct **stack_a);
+void		swap_b(t_struct **stack_b);
+void		swap_both(t_struct **stack_a, t_struct **stack_b);
 
 //***//rotate_functions\\***//
-void	rotate_a(t_struct **stack_a);
-void	rotate_b(t_struct **stack_b);
-void	rotate_both(t_struct **stack_a, t_struct **stack_b);
+void		rotate_a(t_struct **stack_a);
+void		rotate_b(t_struct **stack_b);
+void		rotate_both(t_struct **stack_a, t_struct **stack_b);
 
 //***//reverse_functions\\***//
-void	rev_a(t_struct **stack_a);
-void	rev_b(t_struct **stack_b);
-void	rev_both(t_struct **stack_a, t_struct **stack_b);
+void		rev_a(t_struct **stack_a);
+void		rev_b(t_struct **stack_b);
+void		rev_both(t_struct **stack_a, t_struct **stack_b);
 
 //***//push_functions\\***//
-void	push_a(t_struct **stack_a, t_struct **stack_b);
-void	push_b(t_struct **stack_b, t_struct **stack_a);
+void		push_a(t_struct **stack_a, t_struct **stack_b);
+void		push_b(t_struct **stack_b, t_struct **stack_a);
 
 //***//push_back_functions\\***//
-void	ft_rr(t_struct **stack_b, t_struct **stack_a, t_struct *tmp_b, t_struct *tmp_pair);
-void	ft_rrr(t_struct **stack_b, t_struct **stack_a, t_struct *tmp_b, t_struct *tmp_pair);
-void	ft_rbrra(t_struct **stack_b, t_struct **stack_a, t_struct *tmp_b, t_struct *tmp_pair);
-void	ft_rrbra(t_struct **stack_b, t_struct **stack_a, t_struct *tmp_b, t_struct *tmp_pair);
+void		ft_rr(t_struct **stack_b, t_struct **stack_a,
+				t_struct *tmp_b, t_struct *tmp_pair);
+void		ft_rrr(t_struct **stack_b, t_struct **stack_a,
+				t_struct *tmp_b, t_struct *tmp_pair);
+void		ft_rbrra(t_struct **stack_b, t_struct **stack_a,
+				t_struct *tmp_b, t_struct *tmp_pair);
+void		ft_rrbra(t_struct **stack_b, t_struct **stack_a,
+				t_struct *tmp_b, t_struct *tmp_pair);
 
 //***//markind_functions\\***//
-int		ft_remembering_end(t_struct *tmp, t_struct *temp, int ind);
-void	ft_remembering_start(t_struct *tmp, t_struct *temp, int ind);
-void	ft_marking(t_struct **stack_a);
-void	ft_booling(t_struct *tmp, t_max *max, t_struct **stack_a);
-void	ft_finding(t_struct **stack_a, t_max *max);
+int			ft_remembering_end(t_struct *tmp, t_struct *temp, int ind);
+void		ft_remembering_start(t_struct *tmp, t_struct *temp, int ind);
+void		ft_marking(t_struct **stack_a);
+void		ft_booling(t_struct *tmp, t_max *max, t_struct **stack_a);
+void		ft_finding(t_struct **stack_a, t_max *max);
 
 //***//main_functions\\***//
-int		maxx(int a, int b);
-void    ft_indexing(t_struct **stack_a);
-void    ft_three_nums(t_struct **stack_a);
-void	ft_push_to_b(t_struct **stack_a, t_struct **stack_b, t_max *max);
-void	ft_steping(t_struct **stack);
-void	ft_find_pair(t_struct **stack_a, t_struct **stack_b, t_max *max);
-void	ft_sorting(t_struct **stack_a);
+void		ft_indexing(t_struct **stack_a);
+void		ft_three_nums(t_struct **stack_a);
+void		ft_push_to_b(t_struct **stack_a, t_struct **stack_b, t_max *max);
+void		ft_push_pair(t_struct **stack_a, t_struct **stack_b, t_max *max);
+void		ft_sorting(t_struct **stack_a);
 
 #endif

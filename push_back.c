@@ -6,12 +6,13 @@
 /*   By: gjailbir <gjailbir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/02 20:53:58 by gjailbir          #+#    #+#             */
-/*   Updated: 2021/10/05 23:19:53 by gjailbir         ###   ########.fr       */
+/*   Updated: 2021/10/06 21:08:43 by gjailbir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-void	ft_rr(t_struct **stack_b, t_struct **stack_a, t_struct *tmp_b, t_struct *tmp_pair)
+void	ft_rr(t_struct **stack_b, t_struct **stack_a,
+	t_struct *tmp_b, t_struct *tmp_pair)
 {
 	while (tmp_b->ra > 0 || tmp_pair->ra > 0)
 	{
@@ -27,7 +28,8 @@ void	ft_rr(t_struct **stack_b, t_struct **stack_a, t_struct *tmp_b, t_struct *tm
 	push_a(stack_b, stack_a);
 }
 
-void	ft_rrr(t_struct **stack_b, t_struct **stack_a, t_struct *tmp_b, t_struct *tmp_pair)
+void	ft_rrr(t_struct **stack_b, t_struct **stack_a,
+	t_struct *tmp_b, t_struct *tmp_pair)
 {
 	while (tmp_b->rra > 0 || tmp_pair->rra > 0)
 	{
@@ -43,7 +45,8 @@ void	ft_rrr(t_struct **stack_b, t_struct **stack_a, t_struct *tmp_b, t_struct *t
 	push_a(stack_b, stack_a);
 }
 
-void	ft_rrbra(t_struct **stack_b, t_struct **stack_a, t_struct *tmp_b, t_struct *tmp_pair)
+void	ft_rrbra(t_struct **stack_b, t_struct **stack_a,
+	t_struct *tmp_b, t_struct *tmp_pair)
 {
 	while (tmp_b->rra > 0 || tmp_pair->ra > 0)
 	{
@@ -57,7 +60,8 @@ void	ft_rrbra(t_struct **stack_b, t_struct **stack_a, t_struct *tmp_b, t_struct 
 	push_a(stack_b, stack_a);
 }
 
-void	ft_rbrra(t_struct **stack_b, t_struct **stack_a, t_struct *tmp_b, t_struct *tmp_pair)
+void	ft_rbrra(t_struct **stack_b, t_struct **stack_a,
+	t_struct *tmp_b, t_struct *tmp_pair)
 {
 	while (tmp_b->ra > 0 || tmp_pair->rra > 0)
 	{

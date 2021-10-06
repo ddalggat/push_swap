@@ -6,7 +6,7 @@
 /*   By: gjailbir <gjailbir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/28 20:09:30 by gjailbir          #+#    #+#             */
-/*   Updated: 2021/10/05 23:21:30 by gjailbir         ###   ########.fr       */
+/*   Updated: 2021/10/06 20:48:42 by gjailbir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	ft_remembering_end(t_struct *tmp, t_struct *temp, int ind)
 		}
 		temp = temp->next;
 	}
-	return ind;
+	return (ind);
 }
 
 void	ft_remembering_start(t_struct *tmp, t_struct *temp, int ind)
@@ -61,8 +61,8 @@ void	ft_marking(t_struct **stack_a)
 
 void	ft_booling(t_struct *tmp, t_max *max, t_struct **stack_a)
 {
-	int max_ind;
-	
+	int	max_ind;
+
 	tmp = max->node;
 	max->temp = max->node->index;
 	max_ind = max->node->greater_than;

@@ -6,7 +6,7 @@
 /*   By: gjailbir <gjailbir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/27 15:57:47 by gjailbir          #+#    #+#             */
-/*   Updated: 2021/10/01 22:10:16 by gjailbir         ###   ########.fr       */
+/*   Updated: 2021/10/06 20:43:52 by gjailbir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void	swap_a(t_struct **stack_a)
 	swap_stack(stack_a);
 	write(1, "sa\n", 3);
 }
- 
+
 void	swap_b(t_struct **stack_b)
 {
 	swap_stack(stack_b);
