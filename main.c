@@ -6,7 +6,7 @@
 /*   By: gjailbir <gjailbir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/28 14:23:46 by gjailbir          #+#    #+#             */
-/*   Updated: 2021/10/07 00:56:45 by gjailbir         ###   ########.fr       */
+/*   Updated: 2021/10/07 05:22:37 by gjailbir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int	main(int arc, const char **arv)
 	}
 	if (arc == 3)
 	{
-		if (stack_a->index > stack_a->next->index)
+		if (stack_a->num > stack_a->next->num)
 			swap_a(&stack_a);
 	}
 	else if (arc == 4)
